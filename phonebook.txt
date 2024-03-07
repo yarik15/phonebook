@@ -1,0 +1,22 @@
+phonebook = [
+{"last_name" : "Иванов",
+"name" : "Иван",
+"number" : "111",
+"description" : "описание Иванова"
+},
+{"last_name" : "Петров",
+"name" : "Петр",
+"number" : "222",
+"description": "описание Петрова"
+},
+{"last_name" : "Васичкина",
+"name" : "Василиса",
+"number" : "333",
+"description" : "описание Васичкиной"
+},
+{"last_nam" : "Питонов",
+"name" : "Антон",
+"number" : "777",
+"description" : "умеет в Питон"
+}
+]
