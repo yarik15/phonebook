@@ -1,16 +1,17 @@
 import json
-phone_book = []
-with open('phonebook.txt', 'r', encoding='utf-8') as phin:
-    for line in phin:
-        values = line.strip().split(',')
-        contact = {
-            "last_name": values[0],
-            "name": values[1],
-            "number": values[2],
-            "description": values[3]
-        }
-        phone_book.append(contact)
-
+def convert_to_dict(file_name):
+    phone_book = []
+    with open(file_name, 'r') as file:
+        for line in file:
+            values = line.strip().split(',')
+            contact_dict = {
+                "last_name": values[0],
+                "first_name": values[1],
+                "phone_number": values[2],
+                "city": values[3]
+            }
+            phone_book.append(contact_dict)
+    return phone_book
 def work_with_phonebook():
 
 
@@ -21,7 +22,7 @@ def work_with_phonebook():
     while (choice != 7):
 
         if choice == 1:
-            print_result(phone_book)
+            print(print_result(phone_book))
         elif choice == 2:
             last_name = input('lastname ')
             print(find_by_lastname(phone_book ,last_name))
@@ -63,8 +64,8 @@ def show_menu():
           "2. Найти абонента по фамилии\n"
           "3. Найти абонента по номеру телефона\n"
           "4. Добавить абонента в справочник\n"
-    "5. Сохранить справочник в текстовом формате\n"
-    "6. Закончить работу")
+          "5. Сохранить справочник в текстовом формате\n"
+          "6. Закончить работу")
     choice = int(input())
     return choice
 
@@ -149,45 +150,4 @@ def write_txt(filename, phone_book):
             contact_values = list(contact.values())
             line = ','.join(str(value) for value in contact_values)
             phout.write(f'{line}\n')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 work_with_phonebook()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
